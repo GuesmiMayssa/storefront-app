@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: electronics-store-deployment
+  namespace: electronics-store-namespace
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: electronics-store
+  template:
+    metadata:
+      labels:
+        app: electronics-store
+    spec:
+      containers:
+        - name: electronics-store-container
+          image: mayssag/electronics-store:latest
+          ports:
+            - containerPort: 5000
+          resources:
+            requests:
+              memory: "128Mi"    
+              cpu: "250m"        
+            limits:
+              memory: "256Mi"    
+              cpu: "500m"       

@@ -1,0 +1,14 @@
+<!-- templates/checkout_complete.html -->
+{% extends "base.html" %}
+
+{% block title %}Thank You for Shopping!{% endblock %}
+
+{% block content %}
+<div class="container text-center mt-5">
+    <h1 class="display-4 mb-4">Thank You for Your Purchase!</h1>
+    <p class="lead mb-4">We appreciate your business and hope to see you again soon.</p>
+    <a href="{{ url_for('index') }}" class="btn btn-primary btn-lg">
+        Continue Shopping
+    </a>
+</div>
+{% endblock %}

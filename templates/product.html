@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}{{ product.name }} - Latest Electronics Store{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <img src="{{ url_for('static', filename=product.image) }}" class="img-fluid mb-4" alt="{{ product.name }}">
+        <h1 class="product-title mb-4">{{ product.name }}</h1>
+        <p class="product-description mb-4">{{ product.description }}</p>
+        <h3 class="product-price mb-4">Price: ${{ product.price }}</h3>
+        <a href="{{ url_for('add_to_cart', product_id=product.id) }}" class="btn btn-primary btn-lg">
+            <i class="fas fa-cart-plus mr-2"></i>Add to Cart
+        </a>
+    </div>
+</div>
+
+{% endblock %}
