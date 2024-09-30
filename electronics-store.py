@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, url_for, request, session, send_from_directory
+from flask import Flask, render_template, redirect, url_for, request, session, send_from_directory, jsonify
 import os
 
 app = Flask(__name__, static_folder='static')
@@ -30,6 +30,9 @@ def add_to_cart(product_id):
         session.modified = True
     return redirect(url_for('view_cart'))
 
+@app.route('/healthz')
+def health_check():
+    return jsonify(status="healthy"), 200
 @app.route('/cart')
 def view_cart():
     cart = session.get('cart', [])
