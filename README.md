@@ -24,7 +24,7 @@ A storefront application for electronics built using Flask and deployed on Kuber
 ### Installation Steps
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/storefront-app.git
+   git clone https://github.com/GuesmiMayssa/storefront-app.git
    cd storefront-app
    
 2. Build the Docker image:
